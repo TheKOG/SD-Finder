@@ -2,6 +2,7 @@ import _thread
 from urllib import request
 import time
 import tkinter as tk
+import random
 
 ban=['Bad Gateway','Internal Server Error','No interface is running right now','"auth_required": true']
 requires=['txt2img']
@@ -46,7 +47,9 @@ def Search(flag,lsbox=None,low=10000,high=30000,maxtot=1000):
     except:
         lines=[]
     f=open("web_list.txt",'a',encoding='utf-8')
-    for i in range(low,high+1):
+    queue=list(range(low,high+1))
+    random.shuffle(queue)
+    for i in queue:
         if(flag[0]):
             break
         while tot>maxtot:

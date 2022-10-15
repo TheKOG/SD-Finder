@@ -17,7 +17,7 @@ flag=[False]
 class Win(tk.Tk, object):
     def __init__(self):
         super(Win, self).__init__()
-        self.title('Cyber Magic')
+        self.title('SD Finder')
         moni=ctypes.windll.user32
         global wt
         global ht
@@ -92,7 +92,7 @@ lock=False
 def Sieve_(root):
     global lock
     if(lock):
-        tk.messagebox.showinfo("Locked!","Please wait.")
+        tk.messagebox.showinfo("Locked!","Please wait or restart the program.")
         return
     lock=True
     flag[0]=False
@@ -106,7 +106,7 @@ def Sieve_(root):
 def Search_(root):
     global lock
     if(lock):
-        tk.messagebox.showinfo("Locked!","Please wait.")
+        tk.messagebox.showinfo("Locked!","Please wait or restart the program.")
         return
     lock=True
     flag[0]=False
